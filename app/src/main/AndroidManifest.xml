@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="itan.com.bluetoothle">
+
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- see https://stackoverflow.com/a/37015725/1869297 -->
+
+
+    <!--     If you want to declare that your app is available to BLE-capable devices only -->
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PeripheralRoleActivity" />
+
+        <activity android:name=".CentralRoleActivity" />
+
+        <activity android:name=".DeviceConnectActivity" />
+
+        <!--
+        Service to handle BLE Advertising - Using a service allows advertising to continue
+        when the app is no longer on screen in a reliable manner.
+        -->
+        <service
+            android:name=".PeripheralAdvertiseService"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <service android:name=".CentralService"
+            android:enabled="true"
+            android:exported="false"/>
+
+    </application>
+
+</manifest>
