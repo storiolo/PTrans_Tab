@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.horanet.BarbeBLE.MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"/>
+
+
+    <Button
+        android:id="@+id/button_role_central"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#BDBDBD"
+        android:elevation="4dp"
+        android:enabled="false"
+        android:padding="8dp"
+        android:text="Start"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>
